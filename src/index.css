@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@theme {
+    --breakpoint-sp375: 375px;
+}
+
+:root {
+    --header: 65px;
+    --mainColor: #d42a87;
+    --black: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.text-main {
+    color: var(--mainColor);
+}
+
+.aspect-w-7 {
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 7;
+}
+
+.aspect-h-10 {
+    --tw-aspect-h: 10;
+}
+.inner {
+    max-width: 1310px;
+}
+
+.cenima-swiper .swiper-slide {
+    width: auto;
+}
