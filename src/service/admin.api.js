@@ -4,7 +4,7 @@ export const addMovies = async (dataMovie) => {
   try {
     const response = await api.post(
       "/QuanLyPhim/ThemPhimUploadHinh",
-      dataMovie
+      dataMovie,
     );
     return response.data.content;
   } catch (error) {
@@ -34,6 +34,18 @@ export const getDetailsMovie = async (id) => {
 export const updateMovies = async (item) => {
   try {
     const response = await api.post("/QuanLyPhim/CapNhatPhimUpload", item);
+    return response.data.content;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+export const getDataUser = async () => {
+  try {
+    const response = await api.get(
+      `/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01`,
+    );
     return response.data.content;
   } catch (error) {
     console.log(error);

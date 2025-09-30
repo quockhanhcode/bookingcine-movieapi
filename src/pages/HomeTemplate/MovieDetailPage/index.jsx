@@ -35,22 +35,22 @@ export default function MovieDetailPage() {
           <img
             src={movie?.hinhAnh}
             alt="background"
-            className="w-full h-full object-cover opacity-40"
+            className="h-full w-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10 flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-10">
-          <div className="flex-shrink-0 w-full lg:w-[220px]">
-            <div className="relative group">
+        <div className="relative z-10 mx-auto flex max-w-7xl flex-col space-y-6 px-6 py-10 lg:flex-row lg:space-y-0 lg:space-x-10">
+          <div className="w-full flex-shrink-0 lg:w-[220px]">
+            <div className="group relative">
               <img
                 src={movie?.hinhAnh}
                 alt="Movie Poster"
-                className="rounded-lg shadow-lg w-full"
+                className="w-full rounded-lg shadow-lg"
               />
-              <button className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 bg-white/80 rounded-full flex items-center justify-center">
+              <button className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/80">
                   <svg
-                    className="w-6 h-6 text-black"
+                    className="h-6 w-6 text-black"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -61,11 +61,11 @@ export default function MovieDetailPage() {
             </div>
           </div>
           <div className="flex-1">
-            <h2 className="text-3xl lg:text-4xl font-bold leading-snug mb-2">
+            <h2 className="mb-2 text-3xl leading-snug font-bold lg:text-4xl">
               {movie?.tenPhim}
             </h2>
-            <div className="flex items-center space-x-4 text-sm text-gray-300 mb-2">
-              <span className="bg-blue-600 px-2 py-0.5 rounded text-xs font-semibold">
+            <div className="mb-2 flex items-center space-x-4 text-sm text-gray-300">
+              <span className="rounded bg-blue-600 px-2 py-0.5 text-xs font-semibold">
                 K
               </span>
               <span>{movie?.tenPhim}</span>
@@ -74,9 +74,9 @@ export default function MovieDetailPage() {
               <span>•</span>
               <span>110 phút</span>
             </div>
-            <div className="flex items-center space-x-2 text-yellow-400 font-semibold mb-4">
+            <div className="mb-4 flex items-center space-x-2 font-semibold text-yellow-400">
               <svg
-                className="w-5 h-5 text-pink-500"
+                className="h-5 w-5 text-pink-500"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -84,14 +84,14 @@ export default function MovieDetailPage() {
               </svg>
               <span className="text-white">{movie?.danhGia}</span>
             </div>
-            <div className="text-gray-400 text-sm mb-3">
+            <div className="mb-3 text-sm text-gray-400">
               <strong>Nội dung:</strong>
               {movie?.moTa}
               <a href="#" className="text-yellow-400 hover:underline">
                 Xem thêm
               </a>
             </div>
-            <div className="text-sm text-gray-300 mb-6">
+            <div className="mb-6 text-sm text-gray-300">
               <div>
                 <strong className="pr-3">Ngày chiếu:</strong>
                 {movie?.ngayKhoiChieu
@@ -105,10 +105,10 @@ export default function MovieDetailPage() {
             <div className="flex space-x-4">
               <button
                 onClick={() => dispatch(setOpenPopup(true))}
-                className="flex items-center space-x-2 bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg transition"
+                className="flex items-center space-x-2 rounded-lg bg-pink-600 px-4 py-2 text-white transition hover:bg-pink-700"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="h-5 w-5"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -116,9 +116,9 @@ export default function MovieDetailPage() {
                 </svg>
                 <span>Xem trailer</span>
               </button>
-              <button className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
+              <button className="flex items-center space-x-2 rounded-lg bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700">
                 <svg
-                  className="w-5 h-5"
+                  className="h-5 w-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -131,7 +131,7 @@ export default function MovieDetailPage() {
         </div>
       </div>
 
-      <div className="md:grid grid-cols-7 w-full max-w-7xl mx-auto">
+      <div className="mx-auto w-full max-w-7xl grid-cols-7 md:grid">
         <MovieSchedule movie={movie} />
         <MovieShow />
       </div>

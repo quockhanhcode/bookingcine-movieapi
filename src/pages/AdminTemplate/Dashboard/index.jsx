@@ -1,21 +1,21 @@
 export default function Dashboard() {
   return (
-    <div className="p-6 lg:p-8 xl:p-10 border border-[#eee] rounded-xl shadow-sm ">
-      <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-5 lg:mb-8">
+    <div className="rounded-xl border border-[#eee] p-6 shadow-sm lg:p-8 xl:p-10">
+      <h2 className="mb-5 text-2xl font-bold text-gray-800 lg:mb-8 lg:text-3xl">
         Tổng quan
       </h2>
-      <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 xl:gap-7 mb-8 xl:mb-12">
-        <div className="flex-col-reverse sp375:flex-row relative px-3 py-3 lg:py-5 lg:px-6 border border-[#eee] rounded-xl shadow-sm flex justify-between items-center gap-2 md:gap-5">
-          <div className="block text-center sp375:text-left space-y-0.5">
-            <p className="text-gray-500 text-sm lg:text-base font-medium">
+      <div className="mb-8 grid grid-cols-2 gap-3 xl:mb-12 xl:grid-cols-4 xl:gap-7">
+        <div className="sp375:flex-row relative flex flex-col-reverse items-center justify-between gap-2 rounded-xl border border-[#eee] px-3 py-3 shadow-sm md:gap-5 lg:px-6 lg:py-5">
+          <div className="sp375:text-left block space-y-0.5 text-center">
+            <p className="text-sm font-medium text-gray-500 lg:text-base">
               Tổng phim
             </p>
-            <p className="font-bold text-lg lg:text-2xl text-gray-800">48</p>
-            <p className="text-green-600 text-sm">+12%</p>
+            <p className="text-lg font-bold text-gray-800 lg:text-2xl">48</p>
+            <p className="text-sm text-green-600">+12%</p>
           </div>
-          <div className="bg-blue-600 aspect-square w-10 lg:w-12 flex items-center justify-center rounded-lg">
+          <div className="flex aspect-square w-10 items-center justify-center rounded-lg bg-blue-600 lg:w-12">
             <svg
-              className="w-6 h-6 text-white transition duration-200"
+              className="h-6 w-6 text-white transition duration-200"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width={24}
@@ -32,17 +32,17 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="flex-col-reverse sp375:flex-row relative px-3 py-3 lg:py-5 lg:px-6 border border-[#eee] rounded-xl shadow-sm flex justify-between items-center gap-2 md:gap-5">
-          <div className="block text-center sp375:text-left space-y-0.5">
-            <p className="text-gray-500 text-sm lg:text-base font-medium">
+        <div className="sp375:flex-row relative flex flex-col-reverse items-center justify-between gap-2 rounded-xl border border-[#eee] px-3 py-3 shadow-sm md:gap-5 lg:px-6 lg:py-5">
+          <div className="sp375:text-left block space-y-0.5 text-center">
+            <p className="text-sm font-medium text-gray-500 lg:text-base">
               Vé đã bán
             </p>
-            <p className="font-bold text-lg lg:text-2xl text-gray-800">2,156</p>
-            <p className="text-green-600 text-sm">+23%</p>
+            <p className="text-lg font-bold text-gray-800 lg:text-2xl">2,156</p>
+            <p className="text-sm text-green-600">+23%</p>
           </div>
-          <div className="bg-green-500 aspect-square w-10 lg:w-12 flex items-center justify-center rounded-lg">
+          <div className="flex aspect-square w-10 items-center justify-center rounded-lg bg-green-500 lg:w-12">
             <svg
-              className="w-5 h-5 text-white transition duration-200"
+              className="h-5 w-5 text-white transition duration-200"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -55,19 +55,19 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="flex-col-reverse sp375:flex-row relative px-3 py-3 lg:py-5 lg:px-6 border border-[#eee] rounded-xl shadow-sm flex justify-between items-center gap-2 md:gap-5">
-          <div className="block text-center sp375:text-left space-y-0.5">
-            <p className="text-gray-500 text-sm lg:text-base font-medium">
+        <div className="sp375:flex-row relative flex flex-col-reverse items-center justify-between gap-2 rounded-xl border border-[#eee] px-3 py-3 shadow-sm md:gap-5 lg:px-6 lg:py-5">
+          <div className="sp375:text-left block space-y-0.5 text-center">
+            <p className="text-sm font-medium text-gray-500 lg:text-base">
               Người dùng
             </p>
-            <p className="font-bold text-lg lg:text-2xl text-gray-800">
+            <p className="text-lg font-bold text-gray-800 lg:text-2xl">
               12,341
             </p>
-            <p className="text-green-600 text-sm">+8%</p>
+            <p className="text-sm text-green-600">+8%</p>
           </div>
-          <div className="bg-purple-500 aspect-square w-10 lg:w-12 flex items-center justify-center rounded-lg">
+          <div className="flex aspect-square w-10 items-center justify-center rounded-lg bg-purple-500 lg:w-12">
             <svg
-              className="w-5 h-5 text-white transition duration-200 group-hover:text-white"
+              className="h-5 w-5 text-white transition duration-200 group-hover:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -78,17 +78,17 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="flex-col-reverse sp375:flex-row relative px-3 py-3 lg:py-5 lg:px-6 border border-[#eee] rounded-xl shadow-sm flex justify-between items-center gap-2 md:gap-5">
-          <div className="block text-center sp375:text-left space-y-0.5">
-            <p className="text-gray-500 text-sm lg:text-base font-medium">
+        <div className="sp375:flex-row relative flex flex-col-reverse items-center justify-between gap-2 rounded-xl border border-[#eee] px-3 py-3 shadow-sm md:gap-5 lg:px-6 lg:py-5">
+          <div className="sp375:text-left block space-y-0.5 text-center">
+            <p className="text-sm font-medium text-gray-500 lg:text-base">
               Doanh thu
             </p>
-            <p className="font-bold text-lg lg:text-2xl text-gray-800">485M</p>
-            <p className="text-green-600 text-sm">+15%</p>
+            <p className="text-lg font-bold text-gray-800 lg:text-2xl">485M</p>
+            <p className="text-sm text-green-600">+15%</p>
           </div>
-          <div className="bg-yellow-500 aspect-square w-10 lg:w-12 flex items-center justify-center rounded-lg">
+          <div className="flex aspect-square w-10 items-center justify-center rounded-lg bg-yellow-500 lg:w-12">
             <svg
-              className="w-6 h-6 text-white"
+              className="h-6 w-6 text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -106,28 +106,28 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="flex gap-5 flex-col xl:flex-row xl:gap-10">
-        <div className="p-5 lg:p-9 border border-[#eee] rounded-xl shadow-sm w-full xl:w-[60%]">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">
+      <div className="flex flex-col gap-5 xl:flex-row xl:gap-10">
+        <div className="w-full rounded-xl border border-[#eee] p-5 shadow-sm lg:p-9 xl:w-[60%]">
+          <h2 className="mb-6 text-xl font-semibold text-gray-900">
             Phim mới nhất
           </h2>
           <div className="relative overflow-x-auto">
-            <table className="w-full text-sm text-left min-w-[570px] text-gray-500 ">
-              <thead className=" text-gray-700  bg-gray-50 ">
+            <table className="w-full min-w-[570px] text-left text-sm text-gray-500">
+              <thead className="bg-gray-50 text-gray-700">
                 <tr>
-                  <th scope="col" className="px-3 py-3 w-[60%]">
+                  <th scope="col" className="w-[60%] px-3 py-3">
                     Tên phim
                   </th>
-                  <th scope="col" className="px-3 py-3 w-[20%]">
+                  <th scope="col" className="w-[20%] px-3 py-3">
                     Đánh giá
                   </th>
-                  <th scope="col" className="px-3 py-3 w-[20%]">
+                  <th scope="col" className="w-[20%] px-3 py-3">
                     Trạng thái
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="bg-white border-b  border-gray-200">
+                <tr className="border-b border-gray-200 bg-white">
                   <th
                     scope="row"
                     className="px-3 py-4 font-medium text-gray-900"
@@ -137,7 +137,7 @@ export default function Dashboard() {
                   <td className="px-3 py-4">
                     <div className="flex items-center gap-1">
                       <svg
-                        className="w-6 h-6 text-yellow-400"
+                        className="h-6 w-6 text-yellow-400"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -155,12 +155,12 @@ export default function Dashboard() {
                     </div>
                   </td>
                   <td className="px-3 py-4">
-                    <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                    <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
                       Sắp chiếu
                     </span>
                   </td>
                 </tr>
-                <tr className="bg-white border-b  border-gray-200">
+                <tr className="border-b border-gray-200 bg-white">
                   <th
                     scope="row"
                     className="px-3 py-4 font-medium text-gray-900"
@@ -170,7 +170,7 @@ export default function Dashboard() {
                   <td className="px-3 py-4">
                     <div className="flex items-center gap-1">
                       <svg
-                        className="w-6 h-6 text-yellow-400"
+                        className="h-6 w-6 text-yellow-400"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -188,7 +188,7 @@ export default function Dashboard() {
                     </div>
                   </td>
                   <td className="px-3 py-4">
-                    <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full ">
+                    <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">
                       Đang chiếu
                     </span>
                   </td>
@@ -198,32 +198,32 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="p-5 lg:p-9 border border-[#eee] rounded-xl shadow-sm w-full xl:w-[40%]">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">
+        <div className="w-full rounded-xl border border-[#eee] p-5 shadow-sm lg:p-9 xl:w-[40%]">
+          <h2 className="mb-6 text-xl font-semibold text-gray-900">
             Đặt vé gần đây
           </h2>
           <ul
             role="list"
-            className=" divide-y divide-gray-200 dark:divide-gray-700"
+            className="divide-y divide-gray-200 dark:divide-gray-700"
           >
             <li className="py-3 sm:py-4">
               <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <div className="shrink-0">
                   <img
-                    className="w-8 h-8 rounded-full"
+                    className="h-8 w-8 rounded-full"
                     src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                     alt="Neil image"
                   />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-900 truncate dark:text-white">
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-semibold text-gray-900 dark:text-white">
                     Neil Sims
                   </p>
-                  <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                  <p className="truncate text-sm text-gray-500 dark:text-gray-400">
                     email@flowbite.com
                   </p>
                 </div>
-                <span className="text-green-600 text-md font-semibold">
+                <span className="text-md font-semibold text-green-600">
                   180.000đ
                 </span>
               </div>
@@ -232,20 +232,20 @@ export default function Dashboard() {
               <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <div className="shrink-0">
                   <img
-                    className="w-8 h-8 rounded-full"
+                    className="h-8 w-8 rounded-full"
                     src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                     alt="Neil image"
                   />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-900 truncate dark:text-white">
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-semibold text-gray-900 dark:text-white">
                     Bonnie Green
                   </p>
-                  <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                  <p className="truncate text-sm text-gray-500 dark:text-gray-400">
                     email@flowbite.com
                   </p>
                 </div>
-                <span className="text-green-600 text-md font-semibold">
+                <span className="text-md font-semibold text-green-600">
                   180.000đ
                 </span>
               </div>

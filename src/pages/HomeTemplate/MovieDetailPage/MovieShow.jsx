@@ -15,7 +15,7 @@ export default function MovieShow() {
       <div role="status table mx-auto">
         <svg
           aria-hidden="true"
-          className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+          className="h-8 w-8 animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -43,22 +43,22 @@ export default function MovieShow() {
         return (
           <div
             key={movie.maPhim}
-            className="flex gap-3 mb-6 border-b border-gray-400 pb-5"
+            className="mb-6 flex gap-3 border-b border-gray-400 pb-5"
           >
             <img
               src={movie.hinhAnh}
               alt="Thanh Gươm Diệt Quỷ: Vô Hạn Thành"
-              className="w-[60px] h-[90px] object-cover rounded"
+              className="h-[90px] w-[60px] rounded object-cover"
             />
             <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="bg-blue-600 text-white text-xs px-1.5 py-0.5 rounded">
+              <div className="mb-1 flex items-center gap-2">
+                <span className="rounded bg-blue-600 px-1.5 py-0.5 text-xs text-white">
                   K
                 </span>
                 <h3 className="font-semibold text-black">{movie.tenPhim}</h3>
               </div>
               <p className="text-sm text-black">Chính Kịch, Gia Đình</p>
-              <p className="text-sm text-yellow-500 mt-1">⭐ {movie.danhGia}</p>
+              <p className="mt-1 text-sm text-yellow-500">⭐ {movie.danhGia}</p>
             </div>
           </div>
         );
@@ -67,8 +67,8 @@ export default function MovieShow() {
   };
 
   return (
-    <div className="mt-4 col-span-3 lg:pl-5">
-      <h2 className="text-xl font-bold mb-5 text-black">Phim đang chiếu</h2>
+    <div className="col-span-3 mt-4 lg:pl-5">
+      <h2 className="mb-5 text-xl font-bold text-black">Phim đang chiếu</h2>
       {listMovie()}
     </div>
   );
