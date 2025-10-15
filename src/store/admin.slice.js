@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   movieID: null,
-  fillterUser: [],
+  fillterUser: ["khachhang"],
 };
 
 export const adminSlice = createSlice({

@@ -52,3 +52,26 @@ export const getDataUser = async () => {
     throw error;
   }
 };
+
+export const deleteUser = async (id) => {
+  try {
+    const response = await api.delete(
+      `/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${id}`,
+    );
+    console.log(response);
+    return response.data.content;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+export const getmovieTheater = async () => {
+  try {
+    const response = await api.get(`/QuanLyRap/LayThongTinHeThongRap`);
+    return response.data.content;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};

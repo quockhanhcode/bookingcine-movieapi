@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { getDataUser } from "../../../service/admin.api";
-import { useQuery } from "@tanstack/react-query";
+import { deleteUser, getDataUser } from "../../../service/admin.api";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
 import { getTypeUser } from "../../../store/admin.slice";
 
 export default function UserManagement() {
+  const queryClient = useQueryClient();
+
   const { fillterUser } = useSelector((state) => state.adminSlice);
 
   const dispatch = useDispatch();
@@ -27,6 +29,23 @@ export default function UserManagement() {
 
   const handleUser = (user) => {
     dispatch(getTypeUser(user));
+  };
+
+  const { mutate: deleteMutate } = useMutation({
+    mutationFn: deleteUser,
+    onSuccess: () => {
+      // Invalidate related queries to refetch data after successful deletion
+      queryClient.invalidateQueries({ queryKey: ["deleteItem"] });
+    },
+    onError: (error) => {
+      console.error("Error deleting item:", error);
+      // Handle error, e.g., show a toast notification
+    },
+  });
+
+  const handleDeleteUser = (userID) => {
+    deleteMutate(userID);
+    console.log(userID);
   };
 
   return (
@@ -66,7 +85,7 @@ export default function UserManagement() {
             className="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow-sm dark:bg-gray-700"
           >
             <ul
-              className="py-2 text-sm text-gray-700 dark:text-gray-200 onHide"
+              className="onHide py-2 text-sm text-gray-700 dark:text-gray-200"
               aria-labelledby="dropdownDefaultButton"
             >
               {userTypes.map((item, key) => {
@@ -101,13 +120,14 @@ export default function UserManagement() {
           <table className="min-w-full rounded-lg bg-white">
             <thead>
               <tr className="bg-indigo-600 text-sm leading-normal text-white uppercase">
-                <th className="px-6 py-4 text-left">Avatar</th>
-                <th className="px-6 py-4 text-left">Tài Khoản</th>
-                <th className="px-6 py-4 text-left">Họ Tên</th>
-                <th className="px-6 py-4 text-left">Email</th>
-                <th className="px-6 py-4 text-left">Số Điện Thoại</th>
-                <th className="px-6 py-4 text-left">Mật Khẩu</th>
-                <th className="px-6 py-4 text-left">Mã Loại Người Dùng</th>
+                <th className="px-4 py-4 text-left">Avatar</th>
+                <th className="px-4 py-4 text-left">Tài Khoản</th>
+                <th className="px-4 py-4 text-left">Họ Tên</th>
+                <th className="px-4 py-4 text-left">Email</th>
+                <th className="px-4 py-4 text-left">Số Điện Thoại</th>
+                <th className="px-4 py-4 text-left">Mật Khẩu</th>
+                <th className="px-4 py-4 text-left">Mã Loại Người Dùng</th>
+                <th className="px-4 py-4 text-left">Tuỳ Chọn</th>
               </tr>
             </thead>
             <tbody className="text-sm text-gray-700">
@@ -117,7 +137,7 @@ export default function UserManagement() {
                     key={key}
                     className="border-b border-gray-200 transition-colors duration-200 hover:bg-indigo-50"
                   >
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-4">
                       <svg
                         className="h-6 w-6 text-gray-800 dark:text-white"
                         aria-hidden="true"
@@ -137,10 +157,10 @@ export default function UserManagement() {
                     <td className="px-6 py-4 font-medium text-indigo-800">
                       {item.taiKhoan}
                     </td>
-                    <td className="px-6 py-4">{item.hoTen}</td>
-                    <td className="px-6 py-4 text-blue-600">{item.email}</td>
-                    <td className="px-6 py-4">{item.soDT}</td>
-                    <td className="px-6 py-4 text-gray-500">{item.matKhau}</td>
+                    <td className="px-4 py-4">{item.hoTen}</td>
+                    <td className="px-4 py-4 text-blue-600">{item.email}</td>
+                    <td className="px-4 py-4">{item.soDT}</td>
+                    <td className="px-4 py-4 text-gray-500">{item.matKhau}</td>
                     <td className="flex justify-center px-6 py-4">
                       <span
                         className={`inline-block rounded-full px-3 py-1 ${
@@ -151,6 +171,29 @@ export default function UserManagement() {
                       >
                         {item.maLoaiNguoiDung}
                       </span>
+                    </td>
+                    <td>
+                      <div className="flex">
+                        <button
+                          type="button"
+                          className="me-2 mb-2 cursor-pointer rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                          Xem
+                        </button>
+                        <button
+                          onClick={() => handleDeleteUser(item.taiKhoan)}
+                          type="button"
+                          className="me-2 mb-2 cursor-pointer rounded-lg bg-red-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-red-800 focus:ring-4 focus:ring-red-300 focus:outline-none dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                        >
+                          Xoá
+                        </button>
+                        <button
+                          type="button"
+                          className="me-2 mb-2 cursor-pointer rounded-lg bg-yellow-400 px-5 py-2.5 text-sm font-medium text-white hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 focus:outline-none dark:focus:ring-yellow-900"
+                        >
+                          Cập Nhật
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 );
