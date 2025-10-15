@@ -8,12 +8,8 @@ export default function CinemaManagement() {
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const {
-    data: cinemaData,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ["get-movie-theater"], // Unique key for this query
+  const { data: cinemaData } = useQuery({
+    queryKey: ["get-movie-theater"],
     queryFn: getmovieTheater,
   });
 

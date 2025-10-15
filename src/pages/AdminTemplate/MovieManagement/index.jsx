@@ -80,53 +80,53 @@ export default function MovieManagement() {
 
   return (
     <>
-      <div className="p-4 lg:p-4 xl:p-4 border border-[#eee] rounded-xl shadow-sm ">
+      <div className="rounded-xl border border-[#eee] p-4 shadow-sm lg:p-4 xl:p-4">
         <div className="flex justify-between">
           <div className="block w-[300px] lg:w-sm">
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-5 lg:mb-8">
+            <h2 className="mb-5 text-2xl font-bold text-gray-800 lg:mb-8 lg:text-3xl">
               Quản lý phim
             </h2>
             <div className="mb-6">
               <input
                 type="text"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-400 focus:border-pink-400 block w-full p-2.5"
+                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-pink-400 focus:ring-pink-400"
                 placeholder="Tìm kiếm phim"
               />
             </div>
           </div>
           <button
             onClick={() => handleAddButton()}
-            className="flex items-center gap-1 text-white bg-[var(--mainColor)] font-semibold h-full p-2 md:px-3 rounded-md cursor-pointer hover:bg-white hover:text-[var(--mainColor)] hover:shadow-[0_0_10px_#e396c1] transition-all duration-300"
+            className="flex h-full cursor-pointer items-center gap-1 rounded-md bg-[var(--mainColor)] p-2 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[var(--mainColor)] hover:shadow-[0_0_10px_#e396c1] md:px-3"
           >
-            <Plus className="w-5 h-5" />
+            <Plus className="h-5 w-5" />
             <span className="hidden md:block">Thêm phim mới</span>
           </button>
         </div>
 
-        <div className="border border-[#eee] rounded-lg shadow-sm w-full ">
+        <div className="w-full rounded-lg border border-[#eee] shadow-sm">
           <div className="relative overflow-x-auto rounded-lg">
-            <table className="w-full text-sm text-left text-gray-500 min-w-[840px]">
-              <thead className="text-sm text-gray-500 text-center bg-gray-50 ">
+            <table className="w-full min-w-[840px] text-left text-sm text-gray-500">
+              <thead className="bg-gray-50 text-center text-sm text-gray-500">
                 <tr>
-                  <th scope="col" className="px-6 py-4 text-left w-[10%]">
+                  <th scope="col" className="w-[10%] px-6 py-4 text-left">
                     Poster
                   </th>
-                  <th scope="col" className="px-3 py-4 text-left w-[35%]">
+                  <th scope="col" className="w-[35%] px-3 py-4 text-left">
                     Tên phim
                   </th>
-                  <th scope="col" className="px-3 py-4 w-[10%]">
+                  <th scope="col" className="w-[10%] px-3 py-4">
                     Đánh giá
                   </th>
-                  <th scope="col" className="px-3 py-4 w-[16%]">
+                  <th scope="col" className="w-[16%] px-3 py-4">
                     Ngày phát hành
                   </th>
-                  <th scope="col" className="px-3 py-4 w-[17%]">
+                  <th scope="col" className="w-[17%] px-3 py-4">
                     Trạng thái
                   </th>
-                  <th scope="col" className="px-3 py-4 w-[17%]">
+                  <th scope="col" className="w-[17%] px-3 py-4">
                     Độ Hot
                   </th>
-                  <th scope="col" className="px-3 py-4 w-[12%]">
+                  <th scope="col" className="w-[12%] px-3 py-4">
                     Thao tác
                   </th>
                 </tr>
@@ -138,7 +138,7 @@ export default function MovieManagement() {
                     return (
                       <tr
                         key={item.maPhim}
-                        className="bg-white border-b  border-gray-200 hover:bg-gray-50 "
+                        className="border-b border-gray-200 bg-white hover:bg-gray-50"
                       >
                         <td className="px-6 py-4 pr-2">
                           <img
@@ -149,26 +149,26 @@ export default function MovieManagement() {
                         </td>
                         <td
                           scope="row"
-                          className="px-6 py-4 font-medium text-gray-900 "
+                          className="px-6 py-4 font-medium text-gray-900"
                         >
                           <p className="line-clamp-1">{item.tenPhim}</p>
                         </td>
                         <td className="px-6 py-4">
                           <div className="flex items-center justify-center gap-1">
-                            <Star className="text-yellow-400 w-5" />
+                            <Star className="w-5 text-yellow-400" />
                             <span className="font-semibold text-black">
                               {item.danhGia}/10
                             </span>
                           </div>
                         </td>
                         <td className="px-6 py-4">
-                          <p className="text-gray-500 text-center">
+                          <p className="text-center text-gray-500">
                             {format(item.ngayKhoiChieu, "dd/MM/yyyy")}
                           </p>
                         </td>
                         <td className="px-6 py-4">
                           <span
-                            className={`whitespace-nowrap text-xs font-medium px-2.5 py-0.5 rounded-full block w-fit mx-auto ${
+                            className={`mx-auto block w-fit rounded-full px-2.5 py-0.5 text-xs font-medium whitespace-nowrap ${
                               item.dangChieu === true
                                 ? "bg-green-100 text-green-800"
                                 : "bg-[#FCB53B] text-white"
@@ -180,14 +180,13 @@ export default function MovieManagement() {
                           </span>
                         </td>
                         <td className="px-6 py-4">
-                          <span className="table mx-auto">
+                          <span className="mx-auto table">
                             <svg
-                              className={`w-6 h-6  dark:text-white
-                                ${
-                                  item.hot === true
-                                    ? "text-yellow-500"
-                                    : "text-gray-800"
-                                }`}
+                              className={`h-6 w-6 dark:text-white ${
+                                item.hot === true
+                                  ? "text-yellow-500"
+                                  : "text-gray-800"
+                              }`}
                               aria-hidden="true"
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
@@ -201,14 +200,14 @@ export default function MovieManagement() {
                         </td>
                         <td className="px-6 py-4 text-right">
                           <div className="flex justify-center gap-3">
-                            <Eye className="text-blue-500 w-5 cursor-pointer hover:text-blue-800 transition-all duration-300" />
+                            <Eye className="w-5 cursor-pointer text-blue-500 transition-all duration-300 hover:text-blue-800" />
                             <SquarePen
                               onClick={() => handleGetMovieAPI(item.maPhim)}
-                              className="text-yellow-500 w-5 cursor-pointer hover:text-yellow-800 transition-all duration-300"
+                              className="w-5 cursor-pointer text-yellow-500 transition-all duration-300 hover:text-yellow-800"
                             />
                             <Trash2
                               onClick={() => handleDelete(item.maPhim)}
-                              className="text-red-500 w-5 cursor-pointer hover:text-red-800 transition-all duration-300"
+                              className="w-5 cursor-pointer text-red-500 transition-all duration-300 hover:text-red-800"
                             />
                           </div>
                         </td>
@@ -218,10 +217,10 @@ export default function MovieManagement() {
               </tbody>
             </table>
           </div>
-          <div className="flex items-center justify-between flex-col gap-3 lg:flex-row px-6 py-5">
-            <p className="text-gray-500 text-sm text-center">
+          <div className="flex flex-col items-center justify-between gap-3 px-6 py-5 lg:flex-row">
+            <p className="text-center text-sm text-gray-500">
               Hiển thị {limit} phim mỗi trang{" "}
-              <span className="sm:inline-block hidden">-</span>{" "}
+              <span className="hidden sm:inline-block">-</span>{" "}
               <br className="sm:hidden" /> Tổng cộng 50 phim
             </p>
             <PaginationCustom
